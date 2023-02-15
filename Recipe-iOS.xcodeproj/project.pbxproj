@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121509EA299D6EC90078AD1C /* IngredientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121509E9299D6EC90078AD1C /* IngredientDetailViewController.swift */; };
 		12487D72299AD94900FD8F53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12487D71299AD94900FD8F53 /* AppDelegate.swift */; };
 		12487D74299AD94900FD8F53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12487D73299AD94900FD8F53 /* SceneDelegate.swift */; };
 		12487D76299AD94900FD8F53 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12487D75299AD94900FD8F53 /* HomeViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		121509E9299D6EC90078AD1C /* IngredientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailViewController.swift; sourceTree = "<group>"; };
 		12487D6E299AD94900FD8F53 /* Recipe-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12487D71299AD94900FD8F53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12487D73299AD94900FD8F53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				12487D75299AD94900FD8F53 /* HomeViewController.swift */,
+				121509E9299D6EC90078AD1C /* IngredientDetailViewController.swift */,
 				12E3FC8F299AED3D00AC3077 /* RecipeListViewController.swift */,
 				12E3FC91299AED5400AC3077 /* IngredientListViewController.swift */,
 			);
@@ -185,6 +188,7 @@
 				12E3FC97299AF2AD00AC3077 /* K.swift in Sources */,
 				12487D72299AD94900FD8F53 /* AppDelegate.swift in Sources */,
 				12487D74299AD94900FD8F53 /* SceneDelegate.swift in Sources */,
+				121509EA299D6EC90078AD1C /* IngredientDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
