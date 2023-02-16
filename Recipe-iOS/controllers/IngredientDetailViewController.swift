@@ -19,33 +19,38 @@ class IngredientDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageTitleLabel.text = ingredient == nil ? "Add Ingredient" : "Ingredient Detail"
+        if ingredient != nil {
+            pageTitleLabel.text = "Edit Ingredient"
+            nameField.text = ingredient?.name
+            inStockSwitch.isOn = ingredient?.inStock == true
+        } else {
+            pageTitleLabel.text = "Add Ingredient"
+        }
     }
     
-
+    
     @IBAction func savePress(_ sender: UIButton) {
         let dbClient = DbClient.getInstance(with: context)
-        let result = dbClient.createIngredient(name: nameField.text!, inStock: inStockSwitch.isOn)
+        let enteredName = nameField.text!
+        let enteredStock = inStockSwitch.isOn
+        var result = false
+        
+        if let validIngredient = ingredient {
+            result = dbClient.updateIngredient(validIngredient, name: enteredName, inStock: enteredStock)
+        } else {
+            result = dbClient.createIngredient(name: enteredName, inStock: enteredStock)
+        }
 
         if result == true {
             onDoneBlock!()
             self.dismiss(animated: true, completion: nil)
         } else {
-            let alert = UIAlertController(title: "Something went wrong", message: "Was unable to save new ingredient", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Something went wrong", message: "Was unable to save ingredient", preferredStyle: .alert)
             let action = UIAlertAction(title: "Try Again", style: .cancel)
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
         }
-        //        navigationController?.popViewController(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }

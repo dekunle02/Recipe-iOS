@@ -90,16 +90,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="ColorBackground"/>
                         <color key="tintColor" name="AccentColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientCell" id="YvQ-C2-qpN">
-                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YvQ-C2-qpN" id="D0b-hn-ce1">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="dXM-U5-gze" id="hOP-IY-skE"/>
                             <outlet property="delegate" destination="dXM-U5-gze" id="jqq-If-nAW"/>
@@ -180,8 +170,9 @@
                                                 <rect key="frame" x="0.0" y="164.5" width="374" height="74.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5R-KP-WFI">
-                                                        <rect key="frame" x="50" y="20" width="274" height="34.5"/>
+                                                        <rect key="frame" x="137" y="20" width="100" height="34.5"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="DBU-My-pQd"/>
                                                             <constraint firstAttribute="height" constant="34.5" id="QSr-4O-Okw"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
@@ -193,16 +184,14 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="y5R-KP-WFI" firstAttribute="centerX" secondItem="mBg-Oq-3Pj" secondAttribute="centerX" id="4TQ-c2-Phq"/>
-                                                    <constraint firstItem="y5R-KP-WFI" firstAttribute="centerY" secondItem="mBg-Oq-3Pj" secondAttribute="centerY" id="CM0-3A-cgG"/>
-                                                    <constraint firstItem="y5R-KP-WFI" firstAttribute="centerY" secondItem="mBg-Oq-3Pj" secondAttribute="centerY" id="SVd-7T-GE2"/>
+                                                    <constraint firstItem="y5R-KP-WFI" firstAttribute="centerY" secondItem="mBg-Oq-3Pj" secondAttribute="centerY" id="9Gd-dl-KKI"/>
+                                                    <constraint firstItem="y5R-KP-WFI" firstAttribute="centerX" secondItem="mBg-Oq-3Pj" secondAttribute="centerX" id="N4x-x0-KhC"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="mBg-Oq-3Pj" secondAttribute="trailing" id="BLi-5t-Adx"/>
                                             <constraint firstItem="mBg-Oq-3Pj" firstAttribute="leading" secondItem="RsO-Ha-vft" secondAttribute="leading" id="Vtv-Dx-xdH"/>
-                                            <constraint firstItem="mBg-Oq-3Pj" firstAttribute="top" secondItem="0iv-r7-aZM" secondAttribute="bottom" id="lWm-Uh-9j4"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>

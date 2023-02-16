@@ -52,14 +52,19 @@ import CoreData
             return []
         }
     }
+     
+     func updateIngredient(_ ingredient: Ingredient, name:String, inStock:Bool) -> Bool {
+         ingredient.setValue(name, forKey: "name")
+         ingredient.setValue(inStock, forKey: "inStock")
+         return self.saveContext()
+     }
     
-    func deleteIngredient() {
-        
+     func deleteIngredient(ingredient: Ingredient) -> Bool {
+         self.context?.delete(ingredient)
+         return saveContext()
     }
     
-    func updateIngredient() {
-        
-    }
+    
      
      func saveContext() -> Bool {
          do {
