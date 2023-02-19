@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120686BC29A2CFCD00EC3F4D /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120686BB29A2CFCD00EC3F4D /* RecipeDetailViewController.swift */; };
 		121509EA299D6EC90078AD1C /* IngredientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121509E9299D6EC90078AD1C /* IngredientDetailViewController.swift */; };
 		12487D72299AD94900FD8F53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12487D71299AD94900FD8F53 /* AppDelegate.swift */; };
 		12487D74299AD94900FD8F53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12487D73299AD94900FD8F53 /* SceneDelegate.swift */; };
@@ -15,6 +16,8 @@
 		12487D7C299AD94900FD8F53 /* Recipe_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12487D7A299AD94900FD8F53 /* Recipe_iOS.xcdatamodeld */; };
 		12487D7E299AD94900FD8F53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12487D7D299AD94900FD8F53 /* Assets.xcassets */; };
 		12487D81299AD94900FD8F53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12487D7F299AD94900FD8F53 /* LaunchScreen.storyboard */; };
+		12C2BA82299EBF39001297C9 /* IngredientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C2BA80299EBF39001297C9 /* IngredientTableViewCell.xib */; };
+		12C2BA84299EE434001297C9 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C2BA83299EE434001297C9 /* IngredientTableViewCell.swift */; };
 		12E3FC90299AED3D00AC3077 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3FC8F299AED3D00AC3077 /* RecipeListViewController.swift */; };
 		12E3FC92299AED5400AC3077 /* IngredientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3FC91299AED5400AC3077 /* IngredientListViewController.swift */; };
 		12E3FC94299AEF5D00AC3077 /* DbClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3FC93299AEF5D00AC3077 /* DbClient.swift */; };
@@ -22,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		120686BB29A2CFCD00EC3F4D /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		121509E9299D6EC90078AD1C /* IngredientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailViewController.swift; sourceTree = "<group>"; };
 		12487D6E299AD94900FD8F53 /* Recipe-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12487D71299AD94900FD8F53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		12487D7D299AD94900FD8F53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12487D80299AD94900FD8F53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12487D82299AD94900FD8F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12C2BA80299EBF39001297C9 /* IngredientTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientTableViewCell.xib; sourceTree = "<group>"; };
+		12C2BA83299EE434001297C9 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		12E3FC8F299AED3D00AC3077 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		12E3FC91299AED5400AC3077 /* IngredientListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListViewController.swift; sourceTree = "<group>"; };
 		12E3FC93299AEF5D00AC3077 /* DbClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbClient.swift; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 		12487D88299ADCCE00FD8F53 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				12C2BA80299EBF39001297C9 /* IngredientTableViewCell.xib */,
 				12487D77299AD94900FD8F53 /* Main.storyboard */,
 				12487D7F299AD94900FD8F53 /* LaunchScreen.storyboard */,
 			);
@@ -93,9 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				12487D75299AD94900FD8F53 /* HomeViewController.swift */,
-				121509E9299D6EC90078AD1C /* IngredientDetailViewController.swift */,
 				12E3FC8F299AED3D00AC3077 /* RecipeListViewController.swift */,
+				120686BB29A2CFCD00EC3F4D /* RecipeDetailViewController.swift */,
+				121509E9299D6EC90078AD1C /* IngredientDetailViewController.swift */,
 				12E3FC91299AED5400AC3077 /* IngredientListViewController.swift */,
+				12C2BA83299EE434001297C9 /* IngredientTableViewCell.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -167,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12C2BA82299EBF39001297C9 /* IngredientTableViewCell.xib in Resources */,
 				12487D81299AD94900FD8F53 /* LaunchScreen.storyboard in Resources */,
 				12487D7E299AD94900FD8F53 /* Assets.xcassets in Resources */,
 				12487D79299AD94900FD8F53 /* Main.storyboard in Resources */,
@@ -180,12 +190,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12C2BA84299EE434001297C9 /* IngredientTableViewCell.swift in Sources */,
 				12E3FC90299AED3D00AC3077 /* RecipeListViewController.swift in Sources */,
 				12E3FC92299AED5400AC3077 /* IngredientListViewController.swift in Sources */,
 				12487D76299AD94900FD8F53 /* HomeViewController.swift in Sources */,
 				12E3FC94299AEF5D00AC3077 /* DbClient.swift in Sources */,
 				12487D7C299AD94900FD8F53 /* Recipe_iOS.xcdatamodeld in Sources */,
 				12E3FC97299AF2AD00AC3077 /* K.swift in Sources */,
+				120686BC29A2CFCD00EC3F4D /* RecipeDetailViewController.swift in Sources */,
 				12487D72299AD94900FD8F53 /* AppDelegate.swift in Sources */,
 				12487D74299AD94900FD8F53 /* SceneDelegate.swift in Sources */,
 				121509EA299D6EC90078AD1C /* IngredientDetailViewController.swift in Sources */,

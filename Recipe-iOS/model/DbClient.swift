@@ -64,6 +64,41 @@ import CoreData
          return saveContext()
     }
     
+     //MARK: - CRUD Recipes
+     func createRecipe(name: String, ingredients: [Ingredient]) -> Bool {
+         guard let context = context else {
+             return false
+         }
+         let recipe = Recipe(context: context)
+         recipe.name = name
+         recipe.ingredients?.addingObjects(from: ingredients)
+         return self.saveContext()
+    }
+    
+    func listRecipes() -> [Recipe] {
+        guard let context = self.context else {
+            return []
+        }
+        let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
+        do {
+            let recipeArr = try context.fetch(request)
+            return recipeArr
+        } catch {
+            print("Error fetching context \(error)")
+            return []
+        }
+    }
+     
+     func updateRecipe(_ recipe: Recipe, name:String, ingredients:[Ingredient]) -> Bool {
+         recipe.setValue(name, forKey: "name")
+         recipe.ingredients = NSSet(array: ingredients)
+         return self.saveContext()
+     }
+    
+     func deleteRecipe(_ recipe: Recipe) -> Bool {
+         self.context?.delete(recipe)
+         return saveContext()
+    }
     
      
      func saveContext() -> Bool {
