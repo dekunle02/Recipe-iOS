@@ -19,5 +19,5 @@ struct K {
     static let RECIPE_FRAGMENT_NAME = "Recipes"
     static let RECIPE_LIST_TO_DETAIL_SEGUE = "recipeListToDetail"
     static let RECIPE_CELL_NAME = "recipeCell"
-    
+    static let RECIPE_INGREDIENT_CELL_NAME = "ingredientCollectionCell"
 }
