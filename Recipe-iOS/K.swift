@@ -20,4 +20,7 @@ struct K {
     static let RECIPE_LIST_TO_DETAIL_SEGUE = "recipeListToDetail"
     static let RECIPE_CELL_NAME = "recipeCell"
     static let RECIPE_INGREDIENT_CELL_NAME = "ingredientCollectionCell"
+    
+    static let SUGGESTED_RECIPE_CELL_NAME = "suggestedCell"
+    static let SUGGESTED_CELL_NIB_NAME = "SuggestedTableViewCell"
 }

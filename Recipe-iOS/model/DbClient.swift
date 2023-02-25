@@ -65,13 +65,14 @@ import CoreData
     }
     
      //MARK: - CRUD Recipes
-     func createRecipe(name: String, ingredients: [Ingredient]) -> Bool {
+     func createRecipe(name: String, directions: String,  ingredients: [Ingredient]) -> Bool {
          guard let context = context else {
              return false
          }
          let recipe = Recipe(context: context)
          recipe.name = name
-         recipe.ingredients?.addingObjects(from: ingredients)
+         recipe.directions = directions
+         recipe.ingredients = NSSet(array: ingredients)
          return self.saveContext()
     }
     
@@ -89,8 +90,9 @@ import CoreData
         }
     }
      
-     func updateRecipe(_ recipe: Recipe, name:String, ingredients:[Ingredient]) -> Bool {
+     func updateRecipe(_ recipe: Recipe, name:String, directions: String, ingredients:[Ingredient]) -> Bool {
          recipe.setValue(name, forKey: "name")
+         recipe.setValue(directions, forKey: "directions")
          recipe.ingredients = NSSet(array: ingredients)
          return self.saveContext()
      }
