@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class HomeViewController: UIViewController {
     
@@ -14,8 +15,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var recipeLabel: UILabel!
     @IBOutlet weak var suggestedTable: UITableView!
     @IBOutlet weak var ingredientStack: UIStackView!
-    
+    @IBOutlet weak var noRecordsLabel: UILabel!
     @IBOutlet weak var suggestedStack: UIStackView!
+    
+    var bannerView: GADBannerView!
     
     var recipeArr: [SuggestedRecipe] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -25,6 +28,13 @@ class HomeViewController: UIViewController {
          suggestedTable.dataSource = self
         suggestedTable.register(UINib(nibName: K.SUGGESTED_CELL_NIB_NAME, bundle: nil), forCellReuseIdentifier: K.SUGGESTED_RECIPE_CELL_NAME)
         setCards()
+        
+        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        // change testMode to False in production
+        bannerView.adUnitID = K.getBannerAdId(testMode: true)
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        addBannerViewToView(bannerView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,12 +60,41 @@ class HomeViewController: UIViewController {
         let dbClient = DbClient.getInstance(with: context)
         let plainRecipes = dbClient.listRecipes()
         let plainIngredients = dbClient.listIngredient()
+        
+        if plainRecipes.count == 0 && plainIngredients.count == 0 {
+            noRecordsLabel.isHidden = false
+        } else {
+            noRecordsLabel.isHidden = true
+        }
+        
         recipeLabel.text = String(plainRecipes.count)
         ingredientLabel.text = String(plainIngredients.count)
         let unsortedRecipes = SuggestedRecipe.toSuggestedRecipe(plainRecipes)
         recipeArr = SuggestedRecipe.rankByStockAvailability(unsortedRecipes)
         suggestedTable.reloadData()
     }
+    
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+           bannerView.translatesAutoresizingMaskIntoConstraints = false
+           view.addSubview(bannerView)
+           view.addConstraints(
+             [NSLayoutConstraint(item: bannerView,
+                                 attribute: .bottom,
+                                 relatedBy: .equal,
+                                 toItem: view.safeAreaLayoutGuide,
+                                 attribute: .bottom,
+                                 multiplier: 1,
+                                 constant: 0),
+              NSLayoutConstraint(item: bannerView,
+                                 attribute: .centerX,
+                                 relatedBy: .equal,
+                                 toItem: view,
+                                 attribute: .centerX,
+                                 multiplier: 1,
+                                 constant: 0)
+             ])
+          }
 
 }
 

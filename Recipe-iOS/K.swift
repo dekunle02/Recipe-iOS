@@ -23,4 +23,10 @@ struct K {
     
     static let SUGGESTED_RECIPE_CELL_NAME = "suggestedCell"
     static let SUGGESTED_CELL_NIB_NAME = "SuggestedTableViewCell"
+    
+    
+    static func getBannerAdId(testMode: Bool = true) -> String{
+        return testMode ? "ca-app-pub-3940256099942544/2934735716" : "ca-app-pub-2680408732019277/3169920759"
+    }
+    
 }
