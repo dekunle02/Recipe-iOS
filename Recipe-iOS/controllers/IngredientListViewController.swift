@@ -77,9 +77,39 @@ class IngredientListViewController: UITableViewController {
         }
         return cell
         }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let dbClient = DbClient.getInstance(with: context)
+
+            if indexPath.section == 0 {
+                let ingredient = inStockIngredientArr[indexPath.row]
+                if dbClient.deleteIngredient(ingredient) {
+                    inStockIngredientArr.remove(at: indexPath.row)
+                    ingredientArr = inStockIngredientArr + outOfStockIngredientArr
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            } else {
+                let ingredient = outOfStockIngredientArr[indexPath.row]
+                if dbClient.deleteIngredient(ingredient) {
+                    outOfStockIngredientArr.remove(at: indexPath.row)
+                    ingredientArr = inStockIngredientArr + outOfStockIngredientArr
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+            // Leaving this in as reference for myself.
+        }
+    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let ingredient = ingredientArr[indexPath.row]
+        var ingredient = ingredientArr[indexPath.row]
+        if indexPath.section == 0 {
+            ingredient = inStockIngredientArr[indexPath.row]
+        } else {
+            ingredient = outOfStockIngredientArr[indexPath.row]
+        }
         isAddingNewIngredient = false
         selectedIngredient = ingredient
         performSegue(withIdentifier: K.INGREDIENT_LIST_TO_DETAIL_SEGUE, sender: self)

@@ -26,13 +26,14 @@
 		12E3FC92299AED5400AC3077 /* IngredientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3FC91299AED5400AC3077 /* IngredientListViewController.swift */; };
 		12E3FC94299AEF5D00AC3077 /* DbClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3FC93299AEF5D00AC3077 /* DbClient.swift */; };
 		12E3FC97299AF2AD00AC3077 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3FC96299AF2AD00AC3077 /* K.swift */; };
+		7570E97B8A2292C4559D7770 /* libPods-Recipe-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8906DCC1F3FE9B2B8DCD30 /* libPods-Recipe-iOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		120686BB29A2CFCD00EC3F4D /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		121509E9299D6EC90078AD1C /* IngredientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailViewController.swift; sourceTree = "<group>"; };
 		123C260B29A9AD0E00772110 /* SuggestedRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedRecipe.swift; sourceTree = "<group>"; };
-		12487D6E299AD94900FD8F53 /* Recipe-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12487D6E299AD94900FD8F53 /* Recipea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12487D71299AD94900FD8F53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12487D73299AD94900FD8F53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		12487D75299AD94900FD8F53 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +51,9 @@
 		12E3FC91299AED5400AC3077 /* IngredientListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListViewController.swift; sourceTree = "<group>"; };
 		12E3FC93299AEF5D00AC3077 /* DbClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbClient.swift; sourceTree = "<group>"; };
 		12E3FC96299AF2AD00AC3077 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		441AC988794F5C84A2448246 /* Pods-Recipe-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe-iOS.release.xcconfig"; path = "Target Support Files/Pods-Recipe-iOS/Pods-Recipe-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		5E8906DCC1F3FE9B2B8DCD30 /* libPods-Recipe-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Recipe-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE3156949801D5D63FC8C658 /* Pods-Recipe-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Recipe-iOS/Pods-Recipe-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,24 +61,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7570E97B8A2292C4559D7770 /* libPods-Recipe-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07DCEF1C42D63C289CF160D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE3156949801D5D63FC8C658 /* Pods-Recipe-iOS.debug.xcconfig */,
+				441AC988794F5C84A2448246 /* Pods-Recipe-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		12487D65299AD94900FD8F53 = {
 			isa = PBXGroup;
 			children = (
 				12487D70299AD94900FD8F53 /* Recipe-iOS */,
 				12487D6F299AD94900FD8F53 /* Products */,
+				07DCEF1C42D63C289CF160D2 /* Pods */,
+				E442A19827AD26292C57F47E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		12487D6F299AD94900FD8F53 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				12487D6E299AD94900FD8F53 /* Recipe-iOS.app */,
+				12487D6E299AD94900FD8F53 /* Recipea.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +147,14 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		E442A19827AD26292C57F47E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E8906DCC1F3FE9B2B8DCD30 /* libPods-Recipe-iOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +162,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12487D85299AD94900FD8F53 /* Build configuration list for PBXNativeTarget "Recipe-iOS" */;
 			buildPhases = (
+				8A47CF2E05D51F429FAD0A46 /* [CP] Check Pods Manifest.lock */,
 				12487D6A299AD94900FD8F53 /* Sources */,
 				12487D6B299AD94900FD8F53 /* Frameworks */,
 				12487D6C299AD94900FD8F53 /* Resources */,
@@ -147,7 +173,7 @@
 			);
 			name = "Recipe-iOS";
 			productName = "Recipe-iOS";
-			productReference = 12487D6E299AD94900FD8F53 /* Recipe-iOS.app */;
+			productReference = 12487D6E299AD94900FD8F53 /* Recipea.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -197,6 +223,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A47CF2E05D51F429FAD0A46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Recipe-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		12487D6A299AD94900FD8F53 /* Sources */ = {
@@ -358,6 +409,7 @@
 		};
 		12487D86299AD94900FD8F53 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE3156949801D5D63FC8C658 /* Pods-Recipe-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -377,7 +429,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.samadadeleke.Recipe-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Recipea;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,6 +438,7 @@
 		};
 		12487D87299AD94900FD8F53 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 441AC988794F5C84A2448246 /* Pods-Recipe-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -405,7 +458,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.samadadeleke.Recipe-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Recipea;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

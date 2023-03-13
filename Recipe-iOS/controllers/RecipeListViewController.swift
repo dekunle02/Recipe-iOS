@@ -21,6 +21,12 @@ class RecipeListViewController: UITableViewController {
         self.title = K.RECIPE_FRAGMENT_NAME
         reloadPage()
     }
+    
+    
+    @IBAction func addPress(_ sender: UIBarButtonItem) {
+        isAddingNewRecipe = true
+        performSegue(withIdentifier: K.RECIPE_LIST_TO_DETAIL_SEGUE, sender: self)
+    }
 
     // MARK: - Table view data source
 
@@ -39,12 +45,20 @@ class RecipeListViewController: UITableViewController {
         cell.textLabel?.text = recipe.name
         return cell
     }
-
-
-    @IBAction func addPress(_ sender: UIBarButtonItem) {
-        isAddingNewRecipe = true
-        performSegue(withIdentifier: K.RECIPE_LIST_TO_DETAIL_SEGUE, sender: self)
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let dbClient = DbClient.getInstance(with: context)
+            let recipe = recipeArr[indexPath.row]
+            if dbClient.deleteRecipe(recipe) {
+                recipeArr.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        } else if editingStyle == .insert {
+            // Leaving this in as reference for myself.
+        }
     }
+
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipe = recipeArr[indexPath.row]

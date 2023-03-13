@@ -22,8 +22,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad!!!")
-        suggestedTable.dataSource = self
+         suggestedTable.dataSource = self
         suggestedTable.register(UINib(nibName: K.SUGGESTED_CELL_NIB_NAME, bundle: nil), forCellReuseIdentifier: K.SUGGESTED_RECIPE_CELL_NAME)
         setCards()
     }
@@ -50,6 +49,9 @@ class HomeViewController: UIViewController {
     func reloadPage() {
         let dbClient = DbClient.getInstance(with: context)
         let plainRecipes = dbClient.listRecipes()
+        let plainIngredients = dbClient.listIngredient()
+        recipeLabel.text = String(plainRecipes.count)
+        ingredientLabel.text = String(plainIngredients.count)
         let unsortedRecipes = SuggestedRecipe.toSuggestedRecipe(plainRecipes)
         recipeArr = SuggestedRecipe.rankByStockAvailability(unsortedRecipes)
         suggestedTable.reloadData()

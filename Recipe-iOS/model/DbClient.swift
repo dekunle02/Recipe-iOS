@@ -59,7 +59,7 @@ import CoreData
          return self.saveContext()
      }
     
-     func deleteIngredient(ingredient: Ingredient) -> Bool {
+     func deleteIngredient(_ ingredient: Ingredient) -> Bool {
          self.context?.delete(ingredient)
          return saveContext()
     }
